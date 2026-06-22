@@ -1,4 +1,4 @@
-# Nova — AI CLI Companion
+# Nova — AI CLI Companion (In Development)
 
 An AI-powered terminal companion that lives alongside your shell.
 
