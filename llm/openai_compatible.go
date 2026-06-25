@@ -1,3 +1,4 @@
+// Package llm provides LLM provider abstraction for Nova.
 package llm
 
 import (
@@ -12,11 +13,13 @@ import (
 	"time"
 )
 
+// OpenAICompatibleProvider calls any OpenAI-compatible chat completions API.
 type OpenAICompatibleProvider struct {
 	cfg    Configuration
 	client *http.Client
 }
 
+// NewOpenAICompatibleProvider returns a provider that calls the configured API.
 func NewOpenAICompatibleProvider(cfg Configuration) *OpenAICompatibleProvider {
 	return &OpenAICompatibleProvider{
 		cfg:    cfg,
@@ -24,6 +27,7 @@ func NewOpenAICompatibleProvider(cfg Configuration) *OpenAICompatibleProvider {
 	}
 }
 
+// Name returns the provider name from config, or a default.
 func (p *OpenAICompatibleProvider) Name() string {
 	if p.cfg.Provider != "" {
 		return p.cfg.Provider

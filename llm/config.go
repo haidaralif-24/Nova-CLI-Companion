@@ -1,3 +1,4 @@
+// Package llm provides LLM provider abstraction for Nova.
 package llm
 
 import (
@@ -15,6 +16,7 @@ type Configuration struct {
 	Personality string `json:"personality,omitempty"`
 }
 
+// ConfigPath returns ~/.config/nova/config.json.
 func ConfigPath() (string, error) {
 	dir, err := os.UserConfigDir()
 	if err != nil {
@@ -23,6 +25,7 @@ func ConfigPath() (string, error) {
 	return filepath.Join(dir, "nova", "config.json"), nil
 }
 
+// LoadConfig reads config from disk and overlays env vars.
 func LoadConfig() (*Configuration, error) {
 	cfg := &Configuration{}
 
@@ -80,6 +83,7 @@ func SaveConfig(cfg *Configuration) error {
 	return nil
 }
 
+// IsConfigured returns true when model and (API key or custom base URL) are set.
 func (c *Configuration) IsConfigured() bool {
 	if c.Model == "" {
 		return false

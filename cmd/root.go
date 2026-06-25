@@ -1,3 +1,4 @@
+// Package cmd defines the CLI commands for Nova.
 package cmd
 
 import (
@@ -16,6 +17,7 @@ var rootCmd = &cobra.Command{
 	},
 }
 
+// Execute runs the root CLI command.
 func Execute() {
 	if err := rootCmd.Execute(); err != nil {
 		fmt.Println(err)

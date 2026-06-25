@@ -15,9 +15,17 @@ type ReactRequest struct {
 	ProjectType string
 }
 
+type GreetRequest struct {
+	TimeOfDay   string
+	ProjectName string
+	projectType string
+	Cwd         string
+}
+
 type ProviderInterface interface {
 	Name() string
 	React(ctx context.Context, req ReactRequest) (string error)
+	Greet(ctx context.Context, req GreetRequest) (string, error)
 }
 
 func FromConfig(cfg Configuration) Provider {
