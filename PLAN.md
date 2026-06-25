@@ -525,11 +525,7 @@ Lip Gloss
 
 ## AI Providers
 
-OpenAI
-
-Anthropic
-
-OpenRouter
+Any OpenAI compatible providers
 
 Local Models
 
@@ -538,28 +534,6 @@ Local Models
 
 ---
 
-# MVP Scope
-
-## Week 1
-
-* Greeting system
-* Project detection
-* SQLite storage
-* Command observation
-* Command correction
-
-## Week 2
-
-* Error explanations
-* Session recap
-* Project summaries
-
-## Week 3
-
-* AI greetings
-* Chat mode
-
----
 
 # Future Features
 
