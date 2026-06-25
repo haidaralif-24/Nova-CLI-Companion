@@ -28,16 +28,6 @@ cd Nova-CLI-Companion
 go build -o nova .
 ```
 
-### Usage
-
-```bash
-# Contextual greeting with project detection
-nova greet
-
-# Log a command to the local database
-nova log "your command here"
-```
-
 ## Planned Features
 
 - **Shell Integration** — ZSH `preexec`/`precmd` hooks for automatic command observation
