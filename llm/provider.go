@@ -1,0 +1,28 @@
+package llm
+
+import (
+	"context"
+	"errors"
+)
+
+var ErrUnconfigured = errors.New("Nova: : Provider and/or API Key are missing/unconfigured")
+
+type ReactRequest struct {
+	Command     string
+	FailureType string
+	Stderr      string
+	cwd         string
+	ProjectType string
+}
+
+type ProviderInterface interface {
+	Name() string
+	React(ctx context.Context, req ReactRequest) (string error)
+}
+
+func FromConfig(cfg Configuration) Provider {
+	if !cfg.IsConfigured() {
+		return nil
+	}
+	return NewOpenAICompatibleProvider(cfg)
+}
